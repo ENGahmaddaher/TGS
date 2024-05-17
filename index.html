@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutorial-3</title>
+    <link rel="stylesheet" href="/Tutorial.css" />
+  </head>
+  <body>
+    <section>
+      <h2>Welcome</h2>
+    </section>
+    <div class="box">
+      <h2 class="text1">welcome to Rick Site</h2>
+      <h2 class="text2">Evey One Say</h2>
+      <h2 class="text3">Waba Laba Dab Dab</h2>
+      <img
+        src="/360_F_473840532_3l6e60QsRSvH89VLCGlyskmQRAq2wbwt.jpg"
+        class="logo"
+      />
+    </div>
+    <div class="box2">
+      <h2 class="text4">Call Me</h2>
+      <h2 class="text5">Im here for you</h2>
+      <h2 class="text6">Thanks for watching</h2>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script type="text/javascript">
+      // gsap code here!
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".box",
+            start: "center center",
+            end: "bottom top",
+            markers: false,
+            scrub: true,
+            pin: true,
+          },
+        })
+        .from(".text1", { x: innerWidth * 1 })
+        .from(".text2", { x: innerWidth * -1 })
+        .from(".text3", { x: innerWidth * 1 })
+        .from(".logo", { y: innerHeight * 1, rotate: 360 });
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".box2",
+            start: "center center",
+            end: "bottom top",
+            markers: false,
+            scrub: true,
+            pin: true,
+          },
+        })
+        .from(".box2", { opacity: 0 })
+        .from(".text4", { y: innerHeight * 1 })
+        .from(".text6", { y: innerHeight * 1 })
+        .from(".text5", { y: innerHeight * 1 });
+    </script>
+  </body>
+</html>
